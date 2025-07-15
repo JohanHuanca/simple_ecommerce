@@ -86,7 +86,7 @@ const Orders: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto px-0 py-8">
         <h2 className="text-3xl font-black mb-8 uppercase tracking-wide text-gray-900">Mis Órdenes</h2>
         {renderLoadingState}
       </div>
@@ -95,7 +95,7 @@ const Orders: React.FC = () => {
 
   if (orders.length === 0) {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto px-0 py-8">
         <h2 className="text-3xl font-black mb-8 uppercase tracking-wide text-gray-900">Mis Órdenes</h2>
         {renderEmptyState}
       </div>
@@ -103,7 +103,7 @@ const Orders: React.FC = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-4xl mx-auto px-0 py-8">
       <h2 className="text-3xl font-black mb-8 uppercase tracking-wide text-gray-900">Mis Órdenes</h2>
       
       <div className="mb-6">

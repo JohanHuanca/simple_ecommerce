@@ -136,7 +136,7 @@ const ProductDetail: React.FC = () => {
                     key={idx}
                     src={img}
                     alt={`Miniatura ${idx + 1}`}
-                    className={`w-16 h-16 object-cover cursor-pointer border transition-all ${mainImage === img ? 'border-green-500 ring-2 ring-green-200' : 'border-gray-200 hover:border-gray-300'}`}
+                    className={`w-16 aspect-square object-cover cursor-pointer border transition-all ${mainImage === img ? 'border-green-500 ring-2 ring-green-200' : 'border-gray-200 hover:border-gray-300'}`}
                     onClick={() => setMainImage(img)}
                     onError={handleImageError}
                 />
@@ -185,7 +185,7 @@ const ProductDetail: React.FC = () => {
     const { product, options_ui } = productData;
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="max-w-7xl mx-auto px-0 py-8">
             <div className="flex flex-col lg:flex-row gap-12">
                 {/* Galería de imágenes */}
                 <div className="lg:w-1/2">

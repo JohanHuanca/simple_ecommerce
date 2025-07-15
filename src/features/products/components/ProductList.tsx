@@ -66,7 +66,7 @@ export const ProductList: React.FC = () => {
       className="bg-white shadow-md overflow-hidden border border-gray-100 flex flex-col cursor-pointer hover:shadow-xl transition group"
       onClick={() => handleProductClick(product.slug)}
     >
-      <div className="bg-[#f5f5f5] w-full h-56 flex items-center justify-center overflow-hidden">
+      <div className="bg-[#f5f5f5] w-full aspect-square flex items-center justify-center overflow-hidden">
         <img
           src={product.image_url || PLACEHOLDER_IMAGE}
           alt={product.name}
@@ -90,7 +90,7 @@ export const ProductList: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-6">
+      <div className="max-w-7xl mx-auto px-0 py-6">
         {renderHeader}
         <div className="text-center py-8">
           <p className="text-gray-500">Cargando productos...</p>
@@ -101,7 +101,7 @@ export const ProductList: React.FC = () => {
 
   if (products.length === 0) {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-6">
+      <div className="max-w-7xl mx-auto px-0 py-6">
         {renderHeader}
         <div className="text-center py-12">
           <p className="text-gray-500">
@@ -113,7 +113,7 @@ export const ProductList: React.FC = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6">
+    <div className="max-w-7xl mx-auto px-0 py-6">
       <div className="mb-8">
         {renderHeader}
       </div>

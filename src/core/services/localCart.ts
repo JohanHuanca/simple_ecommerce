@@ -31,16 +31,16 @@ export async function upsertLocalCartItem(variantId: number, quantity: number, i
     }
 
     const stockDisponible = variantData.stock_quantity;
-    const cart = getLocalCart();
+  const cart = getLocalCart();
     const existingItem = cart.find(item => item.product_variant_id === variantId);
     const cantidadEnCarrito = existingItem ? existingItem.quantity : 0;
 
     let cantidadFinal: number;
     if (isIncrement) {
       cantidadFinal = cantidadEnCarrito + quantity;
-    } else {
+  } else {
       cantidadFinal = quantity;
-    }
+  }
 
     // Ajustar cantidad final al stock disponible (igual que la función de Supabase)
     if (cantidadFinal > stockDisponible) {
@@ -56,7 +56,7 @@ export async function upsertLocalCartItem(variantId: number, quantity: number, i
 
     // Actualizar o agregar el ítem
     const idx = cart.findIndex(item => item.product_variant_id === variantId);
-    if (idx >= 0) {
+  if (idx >= 0) {
       cart[idx].quantity = cantidadFinal;
     } else {
       cart.push({ product_variant_id: variantId, quantity: cantidadFinal });

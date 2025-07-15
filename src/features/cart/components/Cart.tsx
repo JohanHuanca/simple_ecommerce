@@ -181,9 +181,9 @@ export const Cart: React.FC = () => {
   const renderCartItem = useCallback((item: CartItemWithVariant) => (
     <div
       key={`${item.user_id}-${item.product_variant_id}`}
-      className="grid grid-cols-[auto_1fr] gap-x-4 bg-white shadow-md border border-gray-100 min-h-[88px]"
+      className="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-4 bg-white shadow-md border border-gray-100 min-h-[88px]"
     >
-      <div className="w-48 h-48 flex-shrink-0 bg-[#f5f5f5]">
+      <div className="w-full sm:w-48 aspect-square flex-shrink-0 bg-[#f5f5f5]">
         <img
           src={variantImages[item.product_variant_id] || PLACEHOLDER_IMAGE}
           alt={item.variant.product.name}
@@ -191,8 +191,8 @@ export const Cart: React.FC = () => {
         />
       </div>
 
-      <div className="relative flex flex-col justify-start items-start py-4 pr-4 text-left">
-        <div className="pr-10 w-full">
+      <div className="relative flex flex-col justify-start items-start py-4 px-4 sm:pr-4 text-left">
+        <div className="w-full">
           <h3 className="text-lg font-bold text-gray-900 line-clamp-2 mb-1">{item.variant.product.name}</h3>
           <p className="text-sm text-gray-500 mb-1">SKU: {item.variant.sku}</p>
           <p className="text-sm text-gray-500 mb-2">S/ {item.variant.price.toFixed(2)} <span className="ml-1">x unidad</span></p>
@@ -218,7 +218,7 @@ export const Cart: React.FC = () => {
           className="absolute top-4 right-4 p-1 text-gray-400 hover:text-red-600 transition disabled:opacity-50 z-10"
           title="Eliminar"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
           </svg>
         </button>
@@ -233,7 +233,7 @@ export const Cart: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto px-0 py-8">
         <h2 className="text-3xl font-black mb-8 uppercase tracking-wide text-gray-900">Tu Carrito</h2>
         <div className="text-center py-8">
           <p className="text-gray-500">Cargando carrito...</p>
@@ -244,7 +244,7 @@ export const Cart: React.FC = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto px-0 py-8">
         <h2 className="text-3xl font-black mb-8 uppercase tracking-wide text-gray-900">Tu Carrito</h2>
         <div className="text-center py-12">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-16 h-16 text-gray-400 mx-auto mb-4">
@@ -265,7 +265,7 @@ export const Cart: React.FC = () => {
 
   if (showStockChangeModal) {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto px-0 py-8">
         <h2 className="text-3xl font-black mb-8 uppercase tracking-wide text-gray-900">Tu Carrito</h2>
         <div className="text-center py-12">
           <svg className="w-16 h-16 text-orange-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -287,7 +287,7 @@ export const Cart: React.FC = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="max-w-7xl mx-auto px-0 py-8">
       <h2 className="text-3xl font-black mb-8 uppercase tracking-wide text-gray-900">Tu Carrito</h2>
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="flex-1 space-y-6">

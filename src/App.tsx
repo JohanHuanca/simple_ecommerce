@@ -1,4 +1,3 @@
-import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import ProductList from "./features/products/components/ProductList";
 import ProductDetail from "./features/products/components/ProductDetail";
